@@ -12,8 +12,41 @@ async function start() {
   getCategories()
   addFilters()
   addSortingOptions()
-  sortByAuthor(books)
+  sortByTitleAscending(books)
+  sortByTitleDescending(books)
+  sortByAuthorAscending(books)
+  sortByAuthorDescending(books)
   displayBooks(books)
+}
+
+function sortByTitleAscending(books) {
+  books.sort(({ title: aTitle }, { title: bTitle }) =>
+    aTitle > bTitle ? 1 : -1)
+}
+
+function sortByTitleDescending(books) {
+  books.sort(({ title: aTitle }, { title: bTitle }) =>
+    aTitle < bTitle ? 1 : -1)
+}
+
+function sortByAuthorAscending(books) {
+  books.sort(({ author: aAuthor }, { author: bAuthor }) =>
+    aAuthor > bAuthor ? 1 : -1)
+}
+
+function sortByAuthorDescending(books) {
+  books.sort(({ author: aAuthor }, { author: bAuthor }) =>
+    aAuthor < bAuthor ? 1 : -1)
+}
+
+function sortBypriceAscending(books) {
+  books.sort(({ price: aPrice }, { price: bPrice }) =>
+    aPrice > bPrice ? 1 : -1)
+}
+
+function sortBypriceDescending(books) {
+  books.sort(({ price: aPrice }, { price: bPrice }) =>
+    aPrice < bPrice ? 1 : -1)
 }
 
 function getCategories() {
@@ -22,17 +55,16 @@ function getCategories() {
   categories.sort()
 }
 
-function sortByAuthor(books) {
-  books.sort(({ author: aLastName }, { author: bLastName }) =>
-    aLastName > bLastName ? 1 : -1);
-}
-
 function addSortingOptions() {
   document.querySelector('.sortingOptions').innerHTML = /*html*/`
     <label><span>Sort by:</span>
       <select class="sortOption">
-        <option>Author</option>
-        <option>Price</option>
+      <option>Title ↑</option>
+      <option>Title ↓</option>
+        <option>Author ↑</option>
+        <option>Author ↓</option>
+        <option>Price ↑</option>
+        <option>Price ↓</option>
       </select>
     </label>
   `
@@ -40,11 +72,6 @@ function addSortingOptions() {
     chosenSortOption = event.target.value
     displayBooks()
   })
-}
-
-function sortByprice(books) {
-  books.sort(({ price: aAge }, { price: bAge }) =>
-    aAge > bAge ? 1 : -1);
 }
 
 function addFilters() {
@@ -67,16 +94,22 @@ function displayBooks() {
     ({ category }) => chosenCategoryFilter === 'All'
       || chosenCategoryFilter === category
   )
-  if (chosenSortOption === 'Author') { sortByAuthor(filteredBooks) }
-  if (chosenSortOption === 'Price') { sortByprice(filteredBooks) }
+  if (chosenSortOption === 'Title ↑') { sortByTitleAscending(filteredBooks) }
+  if (chosenSortOption === 'Title ↓') { sortByTitleDescending(filteredBooks) }
+  if (chosenSortOption === 'Author ↑') { sortByAuthorAscending(filteredBooks) }
+  if (chosenSortOption === 'Author ↓') { sortByAuthorDescending(filteredBooks) }
+  if (chosenSortOption === 'Price ↑') { sortBypriceAscending(filteredBooks) }
+  if (chosenSortOption === 'Price ↓') { sortBypriceDescending(filteredBooks) }
   let htmlArray = filteredBooks.map(({
-    title, author, category, price
+    title, author, category, price, image
   }) => /*html*/`
-    <div class="book">
+    <div class="book col-6 col-sm-4 col-lg-3 col-xxl-2">
+    <img src="${image}" class="card-img-top">
       <h5>${title}</h5>
-      <p><span>Author: </span>${author}</p>
-      <p><span>Category: </span>${category}</p>
-      <p><span>Price: </span>${price}</p>
+      <p><span><b>Author: </b></span>${author}</p>
+      <p><span><b>Category: </b></span>${category}</p>
+      <p><span><b>Price: </b></span>${price}</p>
+      <button type="button" class="btn btn-primary">Buy Now</button>
     </div>
   `)
   document.querySelector('.bookList').innerHTML = htmlArray.join('')

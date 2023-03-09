@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Book title",
-    "author": "Some Author",
+    "author": "Fredrik Johnsson",
     "description": "Lorem ipsum / or your text",
     "category": "UX",
     "price": 150
@@ -10,18 +10,20 @@
   {
     "id": 2,
     "title": "Responsive design with Bootstrap",
-    "author": "Some Author",
+    "author": "E",
     "description": "Lorem ipsum / or your text",
     "category": "UX",
-    "price": 200
+    "price": 200,
+    "image": "img/bootstrap-logo.png"
   },
   {
     "id": 3,
     "title": "HTML - an introduction",
-    "author": "Some Author",
+    "author": "D",
     "description": "Lorem ipsum / or your text",
     "category": "HTML",
-    "price": 100
+    "price": 100,
+    "image": "img/html-logo.png"
   },
   {
     "id": 4,
@@ -29,14 +31,16 @@
     "author": "Some Author",
     "description": "Lorem ipsum / or your text",
     "category": "CSS",
-    "price": 120
+    "price": 120,
+    "image": "img/css-logo.png"
   },
   {
     "id": 5,
     "title": "JavaScript - an introduction",
-    "author": "Some Author",
+    "author": "A",
     "description": "Lorem ipsum / or your text",
     "category": "JavaScript",
-    "price": 300
+    "price": 300,
+    "image": "img/js-logo.png"
   }
 ]
