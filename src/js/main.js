@@ -2,11 +2,29 @@ import { getJSON } from './utilities/getJSON.js'
 import '../scss/style.scss'
 import * as bootstrap from 'bootstrap'
 
-let books
+let books, categories = []
 
 async function start() {
   books = await getJSON('./data/books.json')
+  getCategories()
+  addFilters()
   displayBooks()
+}
+
+function getCategories() {
+  let withDuplicates = books.map(book => book.category)
+  categories = [...new Set(withDuplicates)]
+}
+
+function addFilters() {
+  document.querySelector('.filters').innerHTML = /*html*/`
+    <label><span>Filter by category:</span>
+      <select class="categoryFilter">
+        <option>All</option>
+        ${categories.map(category => `<option>${category}</option>`).join('')}
+      </select>
+    </label>
+  `;
 }
 
 function displayBooks() {
