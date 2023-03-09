@@ -1,11 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Book title",
-    "author": "Fredrik Johnsson",
+    "title": "Modern UX",
+    "author": "Torbjörn Ryder",
     "description": "Lorem ipsum / or your text",
     "category": "UX",
-    "price": 150
+    "price": 400,
+    "image": "img/modern-ux.jpg"
   },
   {
     "id": 2,
@@ -14,7 +15,7 @@
     "description": "Lorem ipsum / or your text",
     "category": "UX",
     "price": 200,
-    "image": "img/bootstrap-logo.png"
+    "image": "img/en-bootstrap-logo.jpg"
   },
   {
     "id": 3,
@@ -42,5 +43,140 @@
     "category": "JavaScript",
     "price": 300,
     "image": "img/js-logo.png"
+  },
+  {
+    "id": 6,
+    "title": "JavaScript - The Definitive Guide",
+    "author": "David Flanagan",
+    "description": "JavaScript is the programming language of the web and is used by more software developers today than any other programming language. For nearly 25 years this best seller has been the go-to guide for JavaScript programmers.",
+    "category": "JavaScript",
+    "price": 550,
+    "image": "img/javascript-the-definitive-guide.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Coding with JavaScript For Dummies ",
+    "author": "C Minnick",
+    "description": "Go from beginner to builder quickly with this hands-on JavaScript guide Coding with JavaScript For Dummies provides easy, hands-on instruction for anyone looking to learn this popular client-side language.",
+    "category": "JavaScript",
+    "price": 270,
+    "image": "img/javascript-dummies.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Eloquent Javascript",
+    "author": "Marijn Haverbeke",
+    "description": "JavaScript lies at the heart of almost every modern web application, from social apps like Twitter to browser-based game frameworks like Phaser and Babylon. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications.",
+    "category": "JavaScript",
+    "price": 450,
+    "image": "img/eloquent-javascript.jpg"
+  },
+  {
+    "id": 9,
+    "title": "JavaScript for impatient programmers",
+    "author": "Dr. Axel Rauschmayer",
+    "description": "This book makes JavaScript less challenging to learn for newcomers, by offering a modern view that is as consistent as possible.",
+    "category": "JavaScript",
+    "price": 350,
+    "image": "img/js-impatient.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The Truth About HTML5",
+    "author": "Luke Stevens",
+    "description": "This is the book that will show you what rocks in HTML5 today and what the future holds for interactivity and video now Flash is dying.",
+    "category": "HTML",
+    "price": 200,
+    "image": "img/truth-html.jpg"
+  },
+  {
+    "id": 11,
+    "title": "HTML5: The Missing Manual",
+    "author": "Matthew MacDonald",
+    "description": "HTML5 is more than a markup language—it's a dozen independent web standards all rolled into one. Until now, all it's been missing is a manual. ",
+    "category": "HTML",
+    "price": 100,
+    "image": "img/html-missing.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Smashing CSS",
+    "author": "Eric Meyer",
+    "description": "Smashing CSS takes you well beyond the basics, covering not only the finer points of layout and effects, but introduces you to the future with HTML5 and CSS3. ",
+    "category": "CSS",
+    "price": 100,
+    "image": "img/smashing-css.jpg"
+  },
+  {
+    "id": 13,
+    "title": "CSS - Pocket Reference",
+    "author": "Eric Meyer",
+    "description": "When you're working with CSS and need a quick answer, CSS Pocket Reference delivers. This handy, concise book provides all of the essential information you need to implement CSS on the fly.",
+    "category": "CSS",
+    "price": 150,
+    "image": "img/css-book.jpg"
+  },
+  {
+    "id": 14,
+    "title": "Core HTML5 Canvas",
+    "author": "David Geary",
+    "description": "This book is a painstakingly crafted, expertly written, code-fueled, no-nonsense deep dive into HTML5 Canvas printed in full color with syntax-highlighted code listings throughout.",
+    "category": "HTML",
+    "price": 400,
+    "image": "img/html-books.jpg"
+  },
+  {
+    "id": 15,
+    "title": "Stylin' with CSS",
+    "author": "Charles Wyke-Smith",
+    "description": "In this completely revised edition of his bestselling Stylin' with CSS, veteran designer and programmer Charles Wyke-Smith guides you througha comprehensive overview of designing Web pages with CSS, includinthe advanced capabilities of CSS3 that are now widely implementedcross all the major browsers.",
+    "category": "CSS",
+    "price": 100,
+    "image": "img/style-css.jpg"
+  },
+  {
+    "id": 16,
+    "title": "Beginning HTML5 & CSS3 For Dummies",
+    "author": "E Tittel",
+    "description": "Your full-color, friendly guide to getting started with HTML5 and CSS3! HTML and CSS are essential tools for creating dynamic websites and help make your websites even more effective and unique. This friendly-but-straightforward guide gets you started with the basics of the latest versions of HTML and CSS: HTML5 and CSS3.",
+    "category": "HTML",
+    "price": 270,
+    "image": "img/html-dummies.jfif"
+  },
+  {
+    "id": 17,
+    "title": "CSS - Cookbook",
+    "author": "Christopher Schmitt",
+    "description": "Learn how to solve the real problems you face with CSS. This cookbook offers hundreds of practical examples for using CSS to format your web pages, and includes code samples you can use right away. ",
+    "category": "CSS",
+    "price": 380,
+    "image": "img/css-cookbook.jpg"
+  },
+  {
+    "id": 18,
+    "title": "UX For Dummies",
+    "author": "D Chesnut",
+    "description": "Get up to speed quickly on the latest in user experience strategy and design UX For Dummies is a hands-on guide to developing and implementing user experience strategy. ",
+    "category": "UX",
+    "price": 250,
+    "image": "img/ux-dummies.jfif"
+  },
+  {
+    "id": 19,
+    "title": "UX For Beginners",
+    "author": "Joel Marsh",
+    "description": "Whether you want to design apps, websites, or just have an intelligent conversation about design, these quick-and-dirty lessons are for you.",
+    "category": "UX",
+    "price": 300,
+    "image": "img/ux-beginners.jpg"
+  },
+  {
+    "id": 20,
+    "title": "Get Into UX",
+    "author": "Vy Alechnavicius",
+    "description": "The UX field has been booming for years, and as a result, a landslide of new talent has been flooding the market. All of the newcomers want to learn user experience design or research as fast as possible and get paid professional positions. ",
+    "category": "UX",
+    "price": 250,
+    "image": "img/get-into-ux.jpg"
   }
 ]

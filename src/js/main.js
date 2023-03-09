@@ -108,7 +108,7 @@ function displayBooks() {
       <h5>${title}</h5>
       <p><span><b>Author: </b></span>${author}</p>
       <p><span><b>Category: </b></span>${category}</p>
-      <p><span><b>Price: </b></span>${price}</p>
+      <p><span><b>Price: </b></span>${price} kr</p>
       <button type="button" class="btn btn-primary">Buy Now</button>
     </div>
   `)
