@@ -1,0 +1,24 @@
+@import 'google-fonts';
+@import 'bootstrap/scss/bootstrap';
+@import 'variable-overrides';
+
+body {
+  background-color: rgb(57, 65, 129);
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.book {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.book b span {
+  display: inline-block;
+  width: 130px;
+}

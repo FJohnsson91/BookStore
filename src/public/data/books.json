@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Book title",
+    "author": "Some Author",
+    "description": "Lorem ipsum / or your text",
+    "category": "UX",
+    "price": 150
+  },
+  {
+    "id": 2,
+    "title": "Responsive design with Bootstrap",
+    "author": "Some Author",
+    "description": "Lorem ipsum / or your text",
+    "category": "UX",
+    "price": 200
+  },
+  {
+    "id": 3,
+    "title": "HTML - an introduction",
+    "author": "Some Author",
+    "description": "Lorem ipsum / or your text",
+    "category": "HTML",
+    "price": 100
+  },
+  {
+    "id": 4,
+    "title": "CSS - an introduction",
+    "author": "Some Author",
+    "description": "Lorem ipsum / or your text",
+    "category": "CSS",
+    "price": 120
+  },
+  {
+    "id": 5,
+    "title": "JavaScript - an introduction",
+    "author": "Some Author",
+    "description": "Lorem ipsum / or your text",
+    "category": "JavaScript",
+    "price": 300
+  }
+]
