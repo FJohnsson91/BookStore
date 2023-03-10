@@ -1,19 +1,34 @@
 @import 'google-fonts';
 @import 'bootstrap/scss/bootstrap';
-@import 'variable-overrides';
 
 body {
-  background-color: rgb(57, 65, 129);
+  background-color: #656d78;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 main {
-  padding-left: 20px;
   margin: 0 auto;
+  margin-left: 100px;
 }
 
 select {
   display: inline-block;
   border-radius: 10px;
+}
+
+label span {
+  color: rgb(65, 65, 65);
+  padding-left: 20px;
+  display: inline-block;
+}
+
+nav {
+  background-color: #0d6efd;
+}
+
+img {
+  max-width: 100%;
 }
 
 .book {
@@ -24,14 +39,25 @@ select {
   border-radius: 10px;
 }
 
+.singleBook {
+  background-color: white;
+  width: 400px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
 .book b span {
   display: inline-block;
   width: 130px;
 }
 
-label span {
-  color: white;
-  padding-left: 20px;
-  display: inline-block;
-  width: 150px;
+.checkoutBtn {
+  margin-top: 15px;
+}
+
+#collapseExample {
+  margin-top: 20px;
+  margin-right: 135px;
+  margin-left: 10px;
 }

@@ -101,18 +101,59 @@ function displayBooks() {
   if (chosenSortOption === 'Price ↑') { sortBypriceAscending(filteredBooks) }
   if (chosenSortOption === 'Price ↓') { sortBypriceDescending(filteredBooks) }
   let htmlArray = filteredBooks.map(({
-    title, author, category, price, image
+    title, author, category, price, image, id
   }) => /*html*/`
-    <div class="book col-6 col-sm-4 col-lg-3 col-xxl-2">
+    <div class="book col-6 col-sm-4 col-lg-3 col-xxl-2" book-id="${id}">
     <img src="${image}" class="card-img-top">
-      <h5>${title}</h5>
+      <h5>${id}: ${title}</h5>
       <p><span><b>Author: </b></span>${author}</p>
       <p><span><b>Category: </b></span>${category}</p>
       <p><span><b>Price: </b></span>${price} kr</p>
-      <button type="button" class="btn btn-primary">Buy Now</button>
+      <button type="button" class="btnBuy btn btn-primary">Buy Now</button>
+      <button type="button" class="btnInfo btn btn-primary">More Info</button>
     </div>
+    
   `)
   document.querySelector('.bookList').innerHTML = htmlArray.join('')
+  document.querySelectorAll('.btnInfo').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      let idElement = event.target.closest('[book-id]')
+      if (idElement) {
+        let id = Number(idElement.getAttribute('book-id'))
+        displayInformation(id)
+      } else {
+        console.log('Error')
+      }
+    })
+  })
+}
+
+function displayInformation(bookID) {
+  let correctBook = books.filter(({ id }) => bookID === id).shift()
+
+  if (correctBook) {
+    let html1 = `
+      <div class="singleBook col-xxl-12" book-id="${correctBook.id}">
+        <img src="${correctBook.image}">
+          <h6>${correctBook.title}</h6>
+          <p>${correctBook.author}</p>
+          <h5>Category</h5>
+          <p>${correctBook.category}</p>
+          <h5>Description</h5>
+          <p>${correctBook.description}</p>
+          <p style="margin-top: -10px; font-weight: bold;">${correctBook.price} SEK</p>
+          <button type="button" class="btnBack btn btn-primary">Go Back</button>
+          <button type="button" class="btnBuy btn btn-primary">Buy Now</button>
+      </div>
+  `
+    document.querySelector('.bookList').innerHTML = html1
+  } else {
+    document.querySelector('.bookList').innerHTML = "No book found with the given ID"
+  }
+
+  document.querySelectorAll('.buttonGoBack').forEach((button) => {
+    button.addEventListener('click', displayBooks)
+  })
 }
 
 start()

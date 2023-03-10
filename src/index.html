@@ -8,12 +8,39 @@
 </head>
 
 <body>
-  <main>
-    <div class="filters py-4 px-3 mx-auto"></div>
-    <div class="sortingOptions py-4 px-3 mx-auto"></div>
-    <div class="bookList row">
+  <nav class="navbar navbar-expand-lg bg-gradient" ;>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">BookStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <div class="filters"></div>
+          </li>
+          <li class="nav-item">
+            <div class="sortingOptions"></div>
+          </li>
+        </ul>
+        <p>
+          <button class="checkoutBtn btn bg-white" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Checkout
+          </button>
+        </p>
+      </div>
     </div>
-
+  </nav>
+  <main>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user
+        activates the relevant trigger.
+      </div>
+    </div>
+    <div class="bookList row"></div>
   </main>
   <script type="module" src="./js/main.js"></script>
 </body>
