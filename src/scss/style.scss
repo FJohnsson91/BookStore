@@ -18,7 +18,7 @@ select {
 }
 
 label span {
-  color: rgb(65, 65, 65);
+  color: rgb(0, 0, 0);
   padding-left: 20px;
   display: inline-block;
 }
@@ -52,8 +52,10 @@ img {
   width: 130px;
 }
 
-.checkoutBtn {
-  margin-top: 15px;
+.bookContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 20px;
 }
 
 #collapseExample {

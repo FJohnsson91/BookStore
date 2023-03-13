@@ -112,7 +112,7 @@ function displayBooks() {
       <p><span><b>Price: </b></span>${price} SEK</p>
       <button type="button" class="btnBuy btn btn-primary">Buy Now</button>
       <button type="button" class="btnInfo btn btn-primary">More Info</button>
-    </div>
+      </div>
     
   `)
   document.querySelector('.bookList').innerHTML = htmlArray.join('')
@@ -187,17 +187,31 @@ function displayInformation(bookID) {
 function addToCart(id) {
   let bookToAdd = books.find((book) => book.id === id)
   if (bookToAdd) {
-    cart.push(bookToAdd)
-    updateCart()
+    let existingBook = cart.find((book) => book.id === id)
+    if (existingBook) {
+      existingBook.quantity += 1
+    } else {
+      bookToAdd.quantity = 1
+      cart.push(bookToAdd)
+    }
+    updateCart(bookToAdd.title)
   }
 }
 
 function updateCart() {
   let cartItems = document.querySelector('.cartItems')
   let cartTotal = document.querySelector('.cartTotal')
+  let cartList = document.querySelector('.cartList')
 
-  cartItems.innerHTML = cart.length
-  cartTotal.innerHTML = cart.reduce((total, book) => total + book.price, 0).toFixed(2)
+  cartItems.innerHTML = cart.reduce((total, book) => total + book.quantity, 0)
+  cartTotal.innerHTML = cart.reduce((total, book) => total + book.price * book.quantity, 0)
+
+  cartList.innerHTML = ''
+  cart.forEach((book) => {
+    let listItem = document.createElement('li')
+    listItem.innerText = `${book.title} x ${book.quantity} - ${book.price} SEK`
+    cartList.appendChild(listItem)
+  })
 }
 
 start()
