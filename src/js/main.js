@@ -5,7 +5,8 @@ import * as bootstrap from 'bootstrap'
 let books,
   chosenCategoryFilter = 'All',
   chosenSortOption,
-  categories = []
+  categories = [],
+  cart = []
 
 async function start() {
   books = await getJSON('./data/books.json')
@@ -104,17 +105,18 @@ function displayBooks() {
     title, author, category, price, image, id
   }) => /*html*/`
     <div class="book col-6 col-sm-4 col-lg-3 col-xxl-2" book-id="${id}">
+    <h5>${title}</h5>
     <img src="${image}" class="card-img-top">
-      <h5>${id}: ${title}</h5>
       <p><span><b>Author: </b></span>${author}</p>
       <p><span><b>Category: </b></span>${category}</p>
-      <p><span><b>Price: </b></span>${price} kr</p>
+      <p><span><b>Price: </b></span>${price} SEK</p>
       <button type="button" class="btnBuy btn btn-primary">Buy Now</button>
       <button type="button" class="btnInfo btn btn-primary">More Info</button>
     </div>
     
   `)
   document.querySelector('.bookList').innerHTML = htmlArray.join('')
+
   document.querySelectorAll('.btnInfo').forEach((button) => {
     button.addEventListener('click', (event) => {
       let idElement = event.target.closest('[book-id]')
@@ -126,34 +128,76 @@ function displayBooks() {
       }
     })
   })
+
+  document.querySelectorAll('.btnBuy').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      let idElement = event.target.closest('[book-id]')
+      if (idElement) {
+        let id = Number(idElement.getAttribute('book-id'))
+        addToCart(id)
+      } else {
+        console.log('Error')
+      }
+    })
+  })
 }
 
 function displayInformation(bookID) {
   let correctBook = books.filter(({ id }) => bookID === id).shift()
 
   if (correctBook) {
-    let html1 = `
+    let showBookInfo = /*html*/`
       <div class="singleBook col-xxl-12" book-id="${correctBook.id}">
+      <h5>${correctBook.title}</h5>
         <img src="${correctBook.image}">
-          <h6>${correctBook.title}</h6>
+          <p></p>
+          <h5>Author:</h5>
           <p>${correctBook.author}</p>
-          <h5>Category</h5>
+          <h5>Category:</h5>
           <p>${correctBook.category}</p>
-          <h5>Description</h5>
+          <h5>Description:</h5>
           <p>${correctBook.description}</p>
           <p style="margin-top: -10px; font-weight: bold;">${correctBook.price} SEK</p>
           <button type="button" class="btnBack btn btn-primary">Go Back</button>
           <button type="button" class="btnBuy btn btn-primary">Buy Now</button>
       </div>
   `
-    document.querySelector('.bookList').innerHTML = html1
+    document.querySelector('.bookList').innerHTML = showBookInfo
   } else {
     document.querySelector('.bookList').innerHTML = "No book found with the given ID"
   }
 
-  document.querySelectorAll('.buttonGoBack').forEach((button) => {
+  document.querySelectorAll('.btnBack').forEach((button) => {
     button.addEventListener('click', displayBooks)
   })
+
+  document.querySelectorAll('.btnBuy').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      let idElement = event.target.closest('[book-id]')
+      if (idElement) {
+        let id = Number(idElement.getAttribute('book-id'))
+        addToCart(id)
+      } else {
+        console.log('Error')
+      }
+    })
+  })
+}
+
+function addToCart(id) {
+  let bookToAdd = books.find((book) => book.id === id)
+  if (bookToAdd) {
+    cart.push(bookToAdd)
+    updateCart()
+  }
+}
+
+function updateCart() {
+  let cartItems = document.querySelector('.cartItems')
+  let cartTotal = document.querySelector('.cartTotal')
+
+  cartItems.innerHTML = cart.length
+  cartTotal.innerHTML = cart.reduce((total, book) => total + book.price, 0).toFixed(2)
 }
 
 start()

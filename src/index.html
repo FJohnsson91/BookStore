@@ -10,7 +10,7 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-gradient" ;>
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">BookStore</a>
+      <a class="navbar-brand" href="index.html">BookStore</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,20 +24,22 @@
             <div class="sortingOptions"></div>
           </li>
         </ul>
-        <p>
-          <button class="checkoutBtn btn bg-white" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Checkout
-          </button>
-        </p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+          aria-expanded="false" aria-controls="collapseExample" id="checkout">
+          Shopping Cart (<span class="cartItems">0</span>)
+        </button>
       </div>
     </div>
   </nav>
   <main>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user
-        activates the relevant trigger.
+    <div class="row">
+      <div class="col-12">
+
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            Total: <span class="cartTotal">0.00</span> SEK
+          </div>
+        </div>
       </div>
     </div>
     <div class="bookList row"></div>
