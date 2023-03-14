@@ -11,8 +11,8 @@
   {
     "id": 2,
     "title": "Responsive design with Bootstrap",
-    "author": "E",
-    "description": "Lorem ipsum / or your text",
+    "author": "Fredrik Johnsson",
+    "description": "Bootstrap is a popular front-end framework for building responsive and mobile-first websites. It is open-source and free to use, making it an accessible and widely adopted choice for web development. One of the very appreciated features of Bootstrap is the grid system. This system helps you to easily create a responsive design that adapts to different screen sizes. For example can you specify how many columns a element should span on different screens. With the help of this system can you create a very advanced layout that adapts to all the different devices and you don't have to write a bunch of CSS styles. Bootstrap also comes with a number of JavaScript plugins that add functionality to your website. For example can you add all of their different components in a very easy way by looking at their documentation. There can you find very complex solutions and just by an easy copy get it into your project. One example is the Bootstrap carousel plugin that allows you to create a image carousel, where you can just by a click shift between different images. Using Bootstrap with CSS offers several benefits that make it a popular choice among developers. On big key aspect of Bootstrap is its consistent and standardized design system with SASS. This system makes it a little bit easier to creae a professional-looking layout without starting from scratch. This is particually helpful for beginners who are new to the field. To get started with Bootstrap, you can download the framework from the official website and add the CSS and JavaScript files to your web page. Once you have the framework set up, you can start using the pre-built components and utility classes to create your website. In conclusion, Bootstrap is a powerful and easy-to-use framework that can help you build responsive and visually appealing projects quickly and easily without being an expert of the field.",
     "category": "UX",
     "price": 200,
     "image": "img/en-bootstrap-logo.jpg"
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "title": "HTML - an introduction",
-    "author": "D",
+    "author": "Fredrik Johnsson",
     "description": "Lorem ipsum / or your text",
     "category": "HTML",
     "price": 100,
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "title": "CSS - an introduction",
-    "author": "Some Author",
+    "author": "Fredrik Johnsson",
     "description": "Lorem ipsum / or your text",
     "category": "CSS",
     "price": 120,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "title": "JavaScript - an introduction",
-    "author": "A",
+    "author": "Fredrik Johnsson",
     "description": "Lorem ipsum / or your text",
     "category": "JavaScript",
     "price": 300,

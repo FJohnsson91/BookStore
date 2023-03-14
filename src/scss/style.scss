@@ -37,6 +37,8 @@ img {
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
+  position: relative;
+  min-height: 650px;
 }
 
 .singleBook {
@@ -56,6 +58,12 @@ img {
   display: flex;
   flex-direction: column-reverse;
   margin-bottom: 20px;
+}
+
+.information {
+  margin: 10px;
+  position: absolute;
+  bottom: 0;
 }
 
 #collapseExample {

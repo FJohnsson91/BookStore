@@ -105,13 +105,17 @@ function displayBooks() {
     title, author, category, price, image, id
   }) => /*html*/`
     <div class="book col-6 col-sm-4 col-lg-3 col-xxl-2" book-id="${id}">
+    <div class="heading">
     <h5>${title}</h5>
     <img src="${image}" class="card-img-top">
+    </div>
+    <div class="information">
       <p><span><b>Author: </b></span>${author}</p>
       <p><span><b>Category: </b></span>${category}</p>
       <p><span><b>Price: </b></span>${price} SEK</p>
       <button type="button" class="btnBuy btn btn-primary">Buy Now</button>
       <button type="button" class="btnInfo btn btn-primary">More Info</button>
+      </div>
       </div>
     
   `)
